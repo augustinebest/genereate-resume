@@ -9,7 +9,14 @@ router.get('/auth/google/callback',
 passport.authenticate('google', { failureRedirect: '/error' }),
 (req, res) => {
     console.log('route: ', req.user)
-    res.redirect('/editor')
+    req.auth = {
+        name: req.user.name,
+        email: req.user.email,
+        image: req.user.image
+    }
+    const data = req.user
+    // res.redirect('/editor')
+    res.render('editor', {user: data})
 })
 
 module.exports = router;

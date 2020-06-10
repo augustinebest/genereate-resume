@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
     res.render('app')
 })
 app.get('/editor', (req, res) => {
-    console.log('jdjd',req.user)
+    console.log('jdjd',req.auth)
     res.render('editor')
 })
 
