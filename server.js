@@ -9,6 +9,7 @@ const path = require('path');
 const passport = require('passport');
 const authRoute = require('./route/auth');
 const GoogleStrategy = require('./service/authService');
+const cookieSession = require('cookie-session');
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -24,6 +25,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/editor', (req, res) => {
+    console.log('jdjd',req)
     res.render('editor')
 })
 
@@ -32,6 +34,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(GoogleStrategy);
+app.use(cookieSession({
+    keys: [process.env.secret]
+}))
 
 // Using static files
 app.use(express.static(__dirname + '/public'));
