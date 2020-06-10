@@ -1,5 +1,10 @@
 const router = require('express').Router()
 
+router.get('/select', (req, res) => {
+    console.log('select routr: ', req.user)
+    res.render('select')
+})
+
 router.get('/editor', (req, res) => {
     console.log('editor route: ',req.user)
     res.render('editor')

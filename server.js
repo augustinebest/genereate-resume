@@ -34,10 +34,6 @@ app.get('/', (req, res) => {
     res.render('app')
 })
 
-app.get('/select', (req, res) => {
-    res.render('select')
-})
-
 // Using static files
 app.use(express.static(__dirname + '/public'));
 app.set('views', path.join(__dirname, 'views'))
