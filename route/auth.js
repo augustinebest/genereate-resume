@@ -15,8 +15,7 @@ passport.authenticate('google', { failureRedirect: '/error' }),
         image: req.user.image
     }
     const data = req.user
-    // res.redirect('/editor')
-    res.render('editor', {user: data})
+    res.redirect('/editor')
 })
 
 module.exports = router;
