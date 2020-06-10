@@ -21,14 +21,14 @@ app.use(bodyparser.json());
 app.use(express.json());//for parsing application/json
 app.use(express.urlencoded({ extended: false })); //for parsing application/x-www-form-urlencoded
 
-// init passport
-app.use(passport.initialize());
-app.use(passport.session());
-
 passport.use(GoogleStrategy);
 app.use(cookieSession({
     keys: [process.env.secret]
 }))
+
+// init passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get('/', (req, res) => {
     res.render('app')

@@ -3,5 +3,6 @@ module.exports = {
       clientID: process.env.clientID,
       clientSecret: process.env.clientSecret,
       callbackURL: 'https://genresume.herokuapp.com/auth/google/callback',
+      passReqToCallback: true
     }
   }
