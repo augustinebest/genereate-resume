@@ -6,7 +6,7 @@ router.get('/select', (req, res) => {
 })
 
 router.get('/editor', (req, res) => {
-    console.log('editor route: ',req.user)
+    console.log('editor route, nawa o: ',req.user)
     res.render('editor')
 })
 
