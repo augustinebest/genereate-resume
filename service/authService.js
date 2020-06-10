@@ -9,10 +9,12 @@ passport.serializeUser((user, done) => {
         image: user.image,
         email: user.email
     }
+    console.log('serialized user: ', userSession)
     done(null, userSession)
 })
 
 passport.deserializeUser((userSession, done) => {
+    console.log('deserialized user: ', userSession)
     done(null, userSession);
 })
 
