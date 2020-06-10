@@ -8,6 +8,7 @@ const bodyparser = require('body-parser');
 const path = require('path');
 const passport = require('passport');
 const authRoute = require('./route/auth');
+const authorizedRoutes = require('./route/authorizedRoutes');
 const GoogleStrategy = require('./service/authService');
 const cookieSession = require('cookie-session');
 
@@ -32,9 +33,9 @@ app.use(cookieSession({
 app.get('/', (req, res) => {
     res.render('app')
 })
-app.get('/editor', (req, res) => {
-    console.log('jdjd',req.user)
-    res.render('editor')
+
+app.get('/select', (req, res) => {
+    res.render('select')
 })
 
 // Using static files
@@ -43,6 +44,7 @@ app.set('views', path.join(__dirname, 'views'))
 
 // Auth Login
 app.use('/', authRoute);
+app.use('', authorizedRoutes)
 
 app.listen(PORT, () => {
     console.log(`app running on PORT: ${PORT}`)
