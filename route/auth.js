@@ -14,7 +14,6 @@ passport.authenticate('google', { failureRedirect: '/error' }),
         email: req.user.email,
         image: req.user.image
     }
-    const data = req.user
     res.redirect('/editor')
 })
 
