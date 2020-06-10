@@ -17,13 +17,12 @@ passport.deserializeUser((userSession, done) => {
 })
 
 const googleStrat = new GoogleStrategy(google, async (accessToken, refreshToken, profile, done) => {
-    let user = {
+    user = {
         googleId: profile.id,
         name: profile.displayName,
         image: profile._json.picture,
         email: profile._json.email
     }
-    console.log(user);
     done(null, user)
 })
 

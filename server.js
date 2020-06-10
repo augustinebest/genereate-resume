@@ -20,15 +20,6 @@ app.use(bodyparser.json());
 app.use(express.json());//for parsing application/json
 app.use(express.urlencoded({ extended: false })); //for parsing application/x-www-form-urlencoded
 
-app.get('/', (req, res) => {
-    res.render('app')
-})
-
-app.get('/editor', (req, res) => {
-    console.log('jdjd',req.user)
-    res.render('editor')
-})
-
 // init passport
 app.use(passport.initialize());
 app.use(passport.session());
@@ -37,6 +28,14 @@ passport.use(GoogleStrategy);
 app.use(cookieSession({
     keys: [process.env.secret]
 }))
+
+app.get('/', (req, res) => {
+    res.render('app')
+})
+app.get('/editor', (req, res) => {
+    console.log('jdjd',req.user)
+    res.render('editor')
+})
 
 // Using static files
 app.use(express.static(__dirname + '/public'));

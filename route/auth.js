@@ -8,6 +8,7 @@ router.get('/auth/google', passport.authenticate("google", {
 router.get('/auth/google/callback', 
 passport.authenticate('google', { failureRedirect: '/error' }),
 (req, res) => {
+    console.log('route: ', req.user)
     res.redirect('/editor')
 })
 
