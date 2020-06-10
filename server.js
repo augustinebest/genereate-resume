@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/editor', (req, res) => {
-    console.log('jdjd',req)
+    console.log('jdjd',req.user)
     res.render('editor')
 })
 
