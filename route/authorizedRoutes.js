@@ -1,13 +1,29 @@
 const router = require('express').Router()
 
 router.get('/select', (req, res) => {
-    console.log('select routr: ', req.user)
-    res.render('select')
+    if(req.user === 'undefined' || req.user === undefined) res.redirect('/auth/google')
+    else {
+        console.log('select routr: ', req.user.name.split(" ")[0])
+        const user = {
+            name: req.user.name,
+            email: req.user.email,
+            image: req.user.image
+        }
+        res.render('select', {user})
+    }
 })
 
 router.get('/editor', (req, res) => {
-    console.log('editor route, nawa o: ',req.user)
-    res.render('editor')
+    if(req.user === 'undefined' || req.user === undefined) res.redirect('/auth/google')
+    else {
+        console.log('editor route, nawa o: ',req.user.name.split(" ")[0])
+        const user = {
+            name: req.user.name,
+            email: req.user.email,
+            image: req.user.image
+        }
+        res.render('editor', {user})
+    }
 })
 
 router.post('/generate', (req, res) => {
