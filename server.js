@@ -38,6 +38,7 @@ app.get('/', (req, res) => {
 
 // Using static files
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/output'));
 app.set('views', path.join(__dirname, 'views'))
 
 // Auth Login
@@ -53,9 +54,12 @@ app.post('/generatepdf', (req, res) => {
     const html = template({ content: webpage });
     const filename = `${data.firstname}-${data.lastname}`;
     pdf.create(html, options)
-    .toFile(`./output/${filename}.pdf`, function(err, response) {
-        console.log('pdf generated successfully', response)
-    })
+        .toFile(`./output/${filename}.pdf`, function (err, response) {
+            // console.log('pdf generated successfully', response)
+            if (response) return res.json({ filename: filename + ".pdf" })
+            if (err) return console.log(err);
+            console.log(res)
+        })
 })
 
 app.listen(PORT, () => {
