@@ -348,7 +348,7 @@
                 var temp = generate.innerHTML;
                 console.log('generating...');
 
-                fetch("/generate", options)
+                fetch("/generatepdf", options)
                     .then((response) => response.json())
                     .then((response) => {
                         if (response.filename) {

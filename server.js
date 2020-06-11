@@ -2,8 +2,6 @@ const express = require('express');
 require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 8080;
-const ejs = require('./utils/ejs');
-const pdf = require('./utils/pdf');
 const bodyparser = require('body-parser');
 const path = require('path');
 const passport = require('passport');
@@ -11,9 +9,13 @@ const authRoute = require('./route/auth');
 const authorizedRoutes = require('./route/authorizedRoutes');
 const GoogleStrategy = require('./service/authService');
 const cookieSession = require('cookie-session');
+const { template1 } = require('./utils/templates');
+const hbs = require('hbs');
+const fs = require("fs");
+const pdf = require('html-pdf')
 
-// set the view engine to ejs
-app.set('view engine', 'ejs');
+//setting view engine 
+app.set('view engine', 'hbs')
 
 // Middleware
 app.use(bodyparser.urlencoded({ extended: true }));
@@ -31,7 +33,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/', (req, res) => {
-    res.render('app')
+    res.render('landing.hbs')
 })
 
 // Using static files
@@ -41,6 +43,20 @@ app.set('views', path.join(__dirname, 'views'))
 // Auth Login
 app.use('/', authRoute);
 app.use('', authorizedRoutes)
+
+app.post('/generatepdf', (req, res) => {
+    const data = req.body;
+    console.log(data)
+    const webpage = template1(data);
+    const options = { format: "A4" };
+    const template = hbs.compile(fs.readFileSync("./templates/temp1.hbs", "utf8"));
+    const html = template({ content: webpage });
+    const filename = `${data.firstname}-${data.lastname}`;
+    pdf.create(html, options)
+    .toFile(`./output/${filename}.pdf`, function(err, response) {
+        console.log('pdf generated successfully', response)
+    })
+})
 
 app.listen(PORT, () => {
     console.log(`app running on PORT: ${PORT}`)
