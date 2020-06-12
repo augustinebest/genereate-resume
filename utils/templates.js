@@ -196,6 +196,37 @@ const template2 = (data) => {
                     </div>
                 </div>
             </div>
+            <h4 class="h4">EDUCATION</h4>
+            <div class="">
+                <table cellpadding="10" style="width:100%">
+                    <thead>
+    
+                        <tr>
+                            <th>Degree</th>
+                            <th>Major</th>
+                            <th>Institution</th>
+                            <th>graduation Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bachelor of Science</td>
+                            <td>Computer Science</td>
+                            <td>Southern Arkansas University</td>
+                            <td>2020</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h4 class="h4">RESEARCH</h4>
+            <div class="p-ma mar">
+                <p>
+                    <strong class="title">Web Hacking- National Collegiate Honors Council</strong>
+                </p>
+                <div class="offset-2 p">
+                    Implemented encryption methods (MD5 and SHA-1)to secure a previously unsecure Web
+                </div>
+            </div>
         </div>
         <div class="right_bar">
             <h4 class="h4">OTHER PROJECTS</h4>
@@ -203,19 +234,17 @@ const template2 = (data) => {
                 <div class="p-ma">
                     <p>
                         <strong class="title">iOS App – Bethel Church, Magnolia</strong>
-                    <div class="offset-2 p">
-                        Designed an iOS app for Bethel Church, to reduce printing of bulletins, and to let members
-                        havedirect access to podcasts, upcoming events etc. Technologies: Swift, MySQL,PHP
-                    </div>
+                        <div class="offset-2 p">
+                            Designed an iOS app for Bethel Church, to reduce printing of bulletins, and to let members havedirect access to podcasts, upcoming events etc. Technologies: Swift, MySQL,PHP
+                        </div>
                     </p>
                 </div>
                 <div class="p-ma">
                     <p>
                         <strong class="title">iOS App – Bethel Church, Magnolia</strong>
-                    <div class="offset-2 p">
-                        Designed an iOS app for Bethel Church, to reduce printing of bulletins, and to let members
-                        havedirect access to podcasts, upcoming events etc. Technologies: Swift, MySQL,PHP
-                    </div>
+                        <div class="offset-2 p">
+                            Designed an iOS app for Bethel Church, to reduce printing of bulletins, and to let members havedirect access to podcasts, upcoming events etc. Technologies: Swift, MySQL,PHP
+                        </div>
                     </p>
                 </div>
             </div>
@@ -232,38 +261,6 @@ const template2 = (data) => {
                 </ul>
             </div>
         </div>
-
-        <!-- Education and research -->
-        <div style="width: 100%; float: left;" class="h4">EDUCATION</div>
-        <div class="">
-            <table cellpadding="10" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>Degree</th>
-                        <th>Major</th>
-                        <th>Institution</th>
-                        <th>graduation Year</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Bachelor of Science</td>
-                        <td>Computer Science</td>
-                        <td>Southern Arkansas University</td>
-                        <td>2020</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <h4 class="h4">RESEARCH</h4>
-            <div class="p-ma mar">
-                <p>
-                    <strong class="title">Web Hacking- National Collegiate Honors Council</strong>
-                </p>
-                <div class="offset-2 p">
-                    Implemented encryption methods (MD5 and SHA-1)to secure a previously unsecure Web
-                </div>
-            </div>
     </div>
 </body>
 
