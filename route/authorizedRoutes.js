@@ -1,29 +1,28 @@
-const router = require('express').Router()
-const ejs = require('../utils/ejs');
-const pdf = require('../utils/pdf');
+const router = require('express').Router();
 
 router.get('/select', (req, res) => {
-    if(req.user === 'undefined' || req.user === undefined) res.redirect('/auth/google')
-    else {
-        const user = {
-            name: req.user.name.split(" ")[0],
-            email: req.user.email,
-            image: req.user.image
-        }
-        res.render('select', {user})
-    }
+    // if(req.user === 'undefined' || req.user === undefined) res.redirect('/auth/google')
+    // else {
+    //     const user = {
+    //         name: req.user.name.split(" ")[0],
+    //         email: req.user.email,
+    //         image: req.user.image
+    //     }
+    //     res.render('select', {user})
+    // }
+    res.render('select')
 })
 
 router.get('/editor', (req, res) => {
-    if(req.user === 'undefined' || req.user === undefined) res.redirect('/auth/google')
-    else {
-        const user = {
-            name: req.user.name || 'Best',
-            email: req.user.email || 'best@g.com',
-            image: req.user.image || 'fjfjfjfj.jpg'
-        }
-        res.render('editor', {user})
-    }
+    // if(req.user === 'undefined' || req.user === undefined) res.redirect('/auth/google')
+    // else {
+    //     const user = {
+    //         name: req.user.name,
+    //         email: req.user.email,
+    //         image: req.user.image
+    //     }
+        res.render('editor')
+    // }
 })
 
 module.exports = router;

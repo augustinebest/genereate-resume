@@ -152,6 +152,122 @@ const template1 = (data) => {
     return body
 }
 
+const template2 = (data) => {
+    let body = `
+    <body class="boxed">
+    <div class="main">
+        <div class="left_bar">
+            <h1>JOHN JAMES DOE</h1>
+            <h4 class="light" style="color:grey; padding-top:5px">favourdemo@gmail.com • (870) 949-0000 •
+                www.favourori.github.io • linkedin.com/in/favourori/ •github.com/orifavour</h4>
+            <h3>TECHNICAL SKILLS</h3>
+            <div class="offset-2">
+                <p class="p-ma">
+                    <strong>Programming language: </strong>Java, Swift, Python, Javascript, PHP, Ruby, Rails
+                </p>
+                <p class="p-ma">
+                    <strong>Programming language: </strong>Java, Swift, Python, Javascript, PHP, Ruby, Rails
+                </p>
+                <p class="p-ma">
+                    <strong>Programming language: </strong>Java, Swift, Python, Javascript, PHP, Ruby, Rails
+                </p>
+                <p class="p-ma">
+                    <strong>Programming language: </strong>Java, Swift, Python, Javascript, PHP, Ruby, Rails
+                </p>
+            </div>
+            <h3>PERSONAL PROJECTS</h3>
+            <div class="offset-2">
+                <div class="p-ma">
+                    <p>
+                        <strong class="title">Bethel Church (App Backend) iOS App Admin</strong>
+                    </p>
+                    <div class="offset-2 p">
+                        Desktop App (developed in Java) for managing & controlling the content of Bethel's Mobile
+                        AppTechnologies: Java, PHP, MySQL
+                    </div>
+                </div>
+                <div class="p-ma">
+                    <p>
+                        <strong class="title">Bethel Church (App Backend) iOS App Admin</strong>
+                    </p>
+                    <div class="offset-2 p">
+                        Desktop App (developed in Java) for managing & controlling the content of Bethel's Mobile
+                        AppTechnologies: Java, PHP, MySQL
+                    </div>
+                </div>
+            </div>
+            <h3>EDUCATION</h3>
+            <div class="">
+                <table cellpadding="10" style="width:100%">
+                    <thead>
+    
+                        <tr>
+                            <th>Degree</th>
+                            <th>Major</th>
+                            <th>Institution</th>
+                            <th>graduation Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bachelor of Science</td>
+                            <td>Computer Science</td>
+                            <td>Southern Arkansas University</td>
+                            <td>2020</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>RESEARCH</h3>
+            <div class="p-ma mar">
+                <p>
+                    <strong class="title">Web Hacking- National Collegiate Honors Council</strong>
+                </p>
+                <div class="offset-2 p">
+                    Implemented encryption methods (MD5 and SHA-1)to secure a previously unsecure Web
+                </div>
+            </div>
+        </div>
+        <div class="right_bar">
+            <h3>OTHER PROJECTS</h3>
+            <div class="offset-2">
+                <div class="p-ma">
+                    <p>
+                        <strong class="title">iOS App – Bethel Church, Magnolia</strong>
+                        <div class="offset-2 p">
+                            Designed an iOS app for Bethel Church, to reduce printing of bulletins, and to let members havedirect access to podcasts, upcoming events etc. Technologies: Swift, MySQL,PHP
+                        </div>
+                    </p>
+                </div>
+                <div class="p-ma">
+                    <p>
+                        <strong class="title">iOS App – Bethel Church, Magnolia</strong>
+                        <div class="offset-2 p">
+                            Designed an iOS app for Bethel Church, to reduce printing of bulletins, and to let members havedirect access to podcasts, upcoming events etc. Technologies: Swift, MySQL,PHP
+                        </div>
+                    </p>
+                </div>
+            </div>
+            <h3>PROFESSIONAL EXPERIENCE</h3>
+            <div class="offset-2">
+                Software Developer, Southern Arkansas University, Magnolia, AR
+            </div>
+            <h3>INVOLVEMENTS</h3>
+            <div>
+                <ul class="boxed-list offset-2 p">
+                    <li class="offset-2" style="text-decoration-style:disc">
+                        Volunteer, Magnolia Blossom, OCT 201
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+    `;
+    return body
+}
+
 module.exports = {
-    template1
+    template1, template2
 }

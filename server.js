@@ -9,7 +9,7 @@ const authRoute = require('./route/auth');
 const authorizedRoutes = require('./route/authorizedRoutes');
 const GoogleStrategy = require('./service/authService');
 const cookieSession = require('cookie-session');
-const { template1 } = require('./utils/templates');
+const { template1, template2 } = require('./utils/templates');
 const hbs = require('hbs');
 const fs = require("fs");
 const pdf = require('html-pdf')
@@ -48,9 +48,9 @@ app.use('', authorizedRoutes)
 app.post('/generatepdf', (req, res) => {
     const data = req.body;
     console.log(data)
-    const webpage = template1(data);
+    const webpage = template2(data);
     const options = { format: "A4" };
-    const template = hbs.compile(fs.readFileSync("./templates/temp1.hbs", "utf8"));
+    const template = hbs.compile(fs.readFileSync("./templates/temp2.hbs", "utf8"));
     const html = template({ content: webpage });
     const filename = `${data.firstname}-${data.lastname}`;
     pdf.create(html, options)
