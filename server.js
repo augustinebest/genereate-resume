@@ -74,9 +74,37 @@ app.post('/googleUpload', (req, res) => {
     const html = template({ content: webpage });
     const filename = `${data.firstname}-${data.lastname}`;
     pdf.create(html, options)
-    .toFile(`./output/${filename}.pdf`, function (err, response) {
-        console.log('access token: ',req.user.accessToken)
-    })
+        .toFile(`./output/${filename}.pdf`, function (err, response) {
+            console.log('access token: ', req.user.accessToken)
+            const oauth2Client = new google.auth.OAuth2();
+            oauth2Client.setCredentials({
+                access_token: req.user.accessToken
+            })
+            const drive = google.drive({
+                version: "v3",
+                auth: oauth2Client
+            });
+            const checkResponse = drive.files.create({
+                requestBody: {
+                    name: `${filename}.pdf`,
+                    mimeType: "application/pdf"
+                },
+                media: {
+                  mimeType: "application/pdf",
+                  body: fs.createReadStream(`./output/${filename}.pdf`)
+                }
+            })
+            checkResponse.then(data => {
+                if(data.status == 200) {
+                    console.log('uploaded successfully')
+                    res.json('uploaded successfully')
+                } else {
+                    console.log('error ocurred');
+                    res.json("error ocurred")
+                }
+            })
+            .catch(err => console.log(err))
+        })
 })
 
 app.listen(PORT, () => {
