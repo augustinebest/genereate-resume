@@ -29,8 +29,14 @@
 
     <nav class="white">
         <div class="nav-wrapper">
-        <a href="/" class="brand-logo"><img src="https://favcode54.org/images/favcode54-logo.png" class="logo responsive-img"/></a>
-    </div>
+            <a href="/" class="brand-logo"><img src="https://favcode54.org/images/favcode54-logo.png"
+                    class="logo responsive-img" /></a>
+            <ul id="nav-mobile" class="right">
+                <li><img src="{{user.image}}" alt="profile_image" style="border: margin-right: 10px" width="30px" height="30px" class="circle"/></li>
+                <li style="color: black;">{{user.name}}</li>
+                <li><a class="btn" style="background-color: red; text-decoration: none; color: white" href="/auth/logout">logout</a></li>
+            </ul>
+        </div>
     </nav>
 
 
@@ -338,7 +344,7 @@
                 //send to serve
                 const options = {
                     method: "POST",
-                    body: JSON.stringify({...json, template: myParam}),
+                    body: JSON.stringify({ ...json, template: myParam }),
                     headers: new Headers({
                         'Accept': 'application/json',
                         "Content-Type": "application/json"

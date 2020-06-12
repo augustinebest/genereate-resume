@@ -48,7 +48,8 @@ app.use('', authorizedRoutes)
 app.post('/generatepdf', (req, res) => {
     const data = req.body;
     console.log(data)
-    const webpage = template2(data);
+    const readTemp = data.template == 1 ? './templates/temp1.hbs' : './templates/temp2.hbs';
+    const webpage = data.template == 1 ? template1(data) : template2(data);
     const options = { format: "A4" };
     const template = hbs.compile(fs.readFileSync("./templates/temp2.hbs", "utf8"));
     const html = template({ content: webpage });

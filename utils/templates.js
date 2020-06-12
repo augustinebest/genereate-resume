@@ -154,7 +154,7 @@ const template1 = (data) => {
 
 const template2 = (data) => {
     let body = `
-    <body class="boxed">
+    <body class="boxed bord">
     <div class="main">
         <div class="left_bar">
             <h1>${data.firstname} ${data.lastname}</h1>
