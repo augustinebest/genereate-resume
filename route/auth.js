@@ -11,4 +11,9 @@ passport.authenticate('google', { failureRedirect: '/error' }),
     res.redirect('/select')
 })
 
+router.get('/auth/logout', (req, res) => {
+  req.logOut();
+  res.redirect('/')
+})
+
 module.exports = router;

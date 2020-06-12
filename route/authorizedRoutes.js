@@ -23,6 +23,7 @@ router.get('/editor', (req, res) => {
         }
         res.render('editor', {user})
     }
+    // res.render('editor')
 })
 
 module.exports = router;

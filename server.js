@@ -51,7 +51,7 @@ app.post('/generatepdf', (req, res) => {
     const readTemp = data.template == 1 ? './templates/temp1.hbs' : './templates/temp2.hbs';
     const webpage = data.template == 1 ? template1(data) : template2(data);
     const options = { format: "A4" };
-    const template = hbs.compile(fs.readFileSync("./templates/temp2.hbs", "utf8"));
+    const template = hbs.compile(fs.readFileSync(readTemp, "utf8"));
     const html = template({ content: webpage });
     const filename = `${data.firstname}-${data.lastname}`;
     pdf.create(html, options)
@@ -61,6 +61,22 @@ app.post('/generatepdf', (req, res) => {
             if (err) return console.log(err);
             console.log(res)
         })
+})
+
+app.post('/googleUpload', (req, res) => {
+    if (!req.user || req.user === 'undefined' || req.user === undefined) res.redirect("/auth/login/google"); //checking if the user is authenticated
+    const data = req.body;
+    console.log(data)
+    const readTemp = data.template == 1 ? './templates/temp1.hbs' : './templates/temp2.hbs';
+    const webpage = data.template == 1 ? template1(data) : template2(data);
+    const options = { format: "A4" };
+    const template = hbs.compile(fs.readFileSync(readTemp, "utf8"));
+    const html = template({ content: webpage });
+    const filename = `${data.firstname}-${data.lastname}`;
+    pdf.create(html, options)
+    .toFile(`./output/${filename}.pdf`, function (err, response) {
+        console.log('access token: ',req.user.accessToken)
+    })
 })
 
 app.listen(PORT, () => {

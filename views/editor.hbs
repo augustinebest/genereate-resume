@@ -47,6 +47,8 @@
             <i class="large material-icons">mode_edit</i>
         </a>
         <ul>
+            <li><a class="btn tooltipped btn-floating black" data-position="left" data-tooltip="Upload to your Google Drive"
+                    id="googleUpload"><img src="/images/google-drive.png" width="30px" height="30px" /></a></li>
 
             <li><a class="btn tooltipped btn-floating red" data-position="left" data-tooltip="Download" id="generate"><i
                         class="material-icons">publish</i></a></li>
@@ -302,12 +304,14 @@
             var container = document.getElementById('page-wrap');
             var reset = document.getElementById('reset');
             var clear = document.getElementById('clear');
-            var generate = document.getElementById('generate');
+            var generate = document.getElementById('generate'); 
+            var googleUpload = document.getElementById('googleUpload'); 
 
             // Event Listener
             reset.addEventListener('click', handleReset);
             clear.addEventListener('click', handleClear);
             generate.addEventListener('click', handleSubmit);
+            googleUpload.addEventListener('click', handleGoogleUpload);
 
         }
         // if window resize call responsive function
@@ -379,6 +383,40 @@
             }
 
 
+        }
+
+        function handleGoogleUpload(e) {
+            e.preventDefault();
+            json = editor.getValue();
+            json = tryParseJSON(json);
+            console.log(json);
+            if(json) {
+                data = json;
+                //send to the server
+                const options = {
+                    method: "POST",
+                    body: JSON.stringify(json),
+                    headers: new Headers({
+                        'Accept': 'application/json',
+                        "Content-Type": "application/json"
+                    })
+                };
+
+                var temp = generate.innerHTML;
+                console.log('generating...');
+
+                fetch("/googleUpload", options)
+                    .then((response) => response.json())
+                    .then((response) => {
+                       // if(response = "done"){
+                        //    M.toast({ html: 'Your resume has been saved to google drive' })
+                       //}   else {
+                         //   M.toast({ html: 'Error Something went wrong' })
+                       //}      
+                       console.log(response)               
+                    })
+                    .catch((err) => console.log(err));
+            }
         }
 
 

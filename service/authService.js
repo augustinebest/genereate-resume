@@ -7,7 +7,8 @@ passport.serializeUser((user, done) => {
         _id: user.googleId,
         name: user.name,
         image: user.image,
-        email: user.email
+        email: user.email,
+        accessToken: user.accessToken
     }
     console.log('serialized user: ', userSession)
     done(null, userSession)
@@ -23,7 +24,8 @@ const googleStrat = new GoogleStrategy(google, async (accessToken, refreshToken,
         googleId: profile.id,
         name: profile.displayName,
         image: profile._json.picture,
-        email: profile._json.email
+        email: profile._json.email,
+        accessToken: accessToken
     }
     done(null, user)
 })
