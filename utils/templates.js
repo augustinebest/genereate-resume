@@ -160,7 +160,7 @@ const template2 = (data) => {
             <h1>JOHN JAMES DOE</h1>
             <h4 class="light" style="color:grey; padding-top:5px">favourdemo@gmail.com • (870) 949-0000 •
                 www.favourori.github.io • linkedin.com/in/favourori/ •github.com/orifavour</h4>
-            <h4>TECHNICAL SKILLS</h4>
+            <h4 class="h4">TECHNICAL SKILLS</h4>
             <div class="offset-2">
                 <p class="p-ma">
                     <strong>Programming language: </strong>Java, Swift, Python, Javascript, PHP, Ruby, Rails
@@ -175,7 +175,7 @@ const template2 = (data) => {
                     <strong>Programming language: </strong>Java, Swift, Python, Javascript, PHP, Ruby, Rails
                 </p>
             </div>
-            <h4>PERSONAL PROJECTS</h4>
+            <h4 class="h4">PERSONAL PROJECTS</h4>
             <div class="offset-2">
                 <div class="p-ma">
                     <p>
@@ -196,7 +196,7 @@ const template2 = (data) => {
                     </div>
                 </div>
             </div>
-            <h4>EDUCATION</h4>
+            <h4 class="h4">EDUCATION</h4>
             <div class="">
                 <table cellpadding="10" style="width:100%">
                     <thead>
@@ -218,7 +218,7 @@ const template2 = (data) => {
                     </tbody>
                 </table>
             </div>
-            <h4>RESEARCH</h4>
+            <h4 class="h4">RESEARCH</h4>
             <div class="p-ma mar">
                 <p>
                     <strong class="title">Web Hacking- National Collegiate Honors Council</strong>
@@ -229,7 +229,7 @@ const template2 = (data) => {
             </div>
         </div>
         <div class="right_bar">
-            <h4>OTHER PROJECTS</h4>
+            <h4 class="h4">OTHER PROJECTS</h4>
             <div class="offset-2">
                 <div class="p-ma">
                     <p>
@@ -248,11 +248,11 @@ const template2 = (data) => {
                     </p>
                 </div>
             </div>
-            <h4>PROFESSIONAL EXPERIENCE</h4>
+            <h4 class="h4">PROFESSIONAL EXPERIENCE</h4>
             <div class="offset-2">
                 Software Developer, Southern Arkansas University, Magnolia, AR
             </div>
-            <h4>INVOLVEMENTS</h4>
+            <h4 class="h4">INVOLVEMENTS</h4>
             <div>
                 <ul class="boxed-list offset-2 p">
                     <li class="offset-2" style="text-decoration-style:disc">
