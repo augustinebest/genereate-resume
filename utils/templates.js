@@ -239,7 +239,7 @@ const template2 = (data) => {
             <h4 class="h4">INVOLVEMENTS</h4>
             <div>
                 <ul class="boxed-list offset-2 p">
-                ${data.involvement.organisations.map(function(key) {
+                ${data.involvement.organizations.map(function(key) {
                     return `<li class="offset-2" style="text-decoration-style:disc"> ${key} </li>`;
                 })}
                 </ul>
