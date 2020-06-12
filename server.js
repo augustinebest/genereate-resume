@@ -12,7 +12,8 @@ const cookieSession = require('cookie-session');
 const { template1, template2 } = require('./utils/templates');
 const hbs = require('hbs');
 const fs = require("fs");
-const pdf = require('html-pdf')
+const pdf = require('html-pdf');
+const { google } = require('googleapis')
 
 //setting view engine 
 app.set('view engine', 'hbs')
