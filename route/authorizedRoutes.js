@@ -10,7 +10,6 @@ router.get('/select', (req, res) => {
         }
         res.render('select', {user})
     }
-    res.render('select')
 })
 
 router.get('/editor', (req, res) => {
@@ -23,7 +22,6 @@ router.get('/editor', (req, res) => {
         }
         res.render('editor', {user})
     }
-    // res.render('editor')
 })
 
 module.exports = router;
