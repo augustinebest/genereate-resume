@@ -21,7 +21,7 @@
     "express-session": "^1.17.1",
     "googleapis": "^52.1.0",
     "hbs": "^4.1.1",
-    "html-pdf": "^2.2.0",
+    "html-pdf": "^3.0.1",
     "moment": "^2.26.0",
     "mongoose": "^5.9.18",
     "passport": "^0.4.1",
